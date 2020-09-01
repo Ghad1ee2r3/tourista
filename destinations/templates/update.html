@@ -4,9 +4,13 @@
 {% block title %}Update{% endblock title %}
 
 {% block content %}
-<form action="{% url 'destination-update' destination_obj.id %}" method="POST" enctype="multipart/form-data">
+<div>
+<div class="jumbotron m-3"style="background-color: #2ECC71">
+<form  class="input-small" style="background-color: #2ECC71 , margin:10% " action="{% url 'destination-update' destination_obj.id %}" method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Update">
+  {{form|crispy}}
+  <input type="submit" class="btn btn-dark" value="Update">
 </form>
+</div>
+</div>
 {% endblock content %}

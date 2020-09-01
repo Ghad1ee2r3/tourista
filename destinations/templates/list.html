@@ -1,16 +1,55 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block title %}List{% endblock title %}
 
 {% block content %}
-<br>
-<div class="row">
-  {% for destination in destinations %}
-  <a href="{% url 'destination-detail' destination.id %}">
-    <img src="{{destination.pretty_picture.url}}" />
-    <p>{{destination.name}}</p>
-    <p>{{destination.activities}}</p>
-  </a>
-  {% endfor %}
+<div style=" background-image: linear-gradient(rgba(0, 0, 0, 0.212),#2ECC71), url(data.urls.full);
+  height:90vh;
+  background-size:cover;
+  background-attachment:fixed;
+  position: relative;
+  background-position: center">
+<div class="hero-text">
+ <h1> <span class="green"> </span> </h1>
+ <div   style="margin-bottom: 5%; padding: 10%;  margin-top: 5%; margin-left: 10%; margin-right: 10%; ">
+     <p>
+
+     </p>
+     <h2 style="font-size: 3em;
+  margin: 0;
+  padding: 0;
+  color: #000000;">Welcome to Tourista </h2>
+  <br>
+  <br>
+     <p>You can view destinations and their details,also  you can modify the current destinations information and can be deleted or add a new destination.  &nbsp; </p>
+
+ </div>
 </div>
+  </div>
+
+<br>
+<hr style="border-radius: 5px">
+
+<div class="row">
+
+
+  {% for destination in destinations %}
+  <div class="col-12 col-sm-6 col-md-4">
+  <a href="{% url 'destination-detail' destination.id %}">
+    <img src="{{destination.pretty_picture.url}}" class="card-img-top" alt="..." />
+    <div class="card-body">
+    <p class="card-title">{{destination.name}}</p></a>
+    <p class="card-text" >{{destination.activities}}</p>
+
+    </div>
+
+
+
+  </div>
+
+
+  {% endfor %}
+
+
+
 {% endblock content %}
