@@ -7,11 +7,15 @@
             <div class=" col-12 col-sm-6 col-md-12 "
 
               style="margin-top:5%"  >
-  <b>  <p>{{destination.name}}</p></b>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
+  <h3><b>  <p>{{destination.name}}</p></b></h3>
+    <p><b> Description: </b>{{destination.description}}</p>
+    <p><b>Activities:</b> {{destination.activities}}</p>
+    <div class="col-md-4">
+     <div class="thumbnail">
     <p><img src="{{destination.pretty_picture.url}}" width="1000" height="400"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
+    </div>
+      </div>
+    <p><b> Optimal Visiting Season: </b>{{destination.optimal_visiting_season}}</p>
       <div style="margin-bottom:5% ">
     <a href="{% url 'destination-update' destination.id %}">
         <button class="btn btn-dark">Update</button>
